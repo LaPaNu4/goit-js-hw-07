@@ -18,11 +18,11 @@ const galleryItemEl = galleryItems
 galleryEL.innerHTML = galleryItemEl;
 // window.addEventListener("click", onGalleryItemClick);
 // function onGalleryItemClick(e) {
-  // e.preventDefault();
-  const options = {
-    captionsData: "alt",
-    captionDelay: 250,
-  };
-  const lightbox = new SimpleLightbox(".gallery a", options);
-  // window.removeEventListener("click", onGalleryItemClick);
+// e.preventDefault();
+const options = {
+  captionsData: "alt",
+  captionDelay: 250,
+};
+const lightbox = new SimpleLightbox(".gallery a", options);
+// window.removeEventListener("click", onGalleryItemClick);
 // }
