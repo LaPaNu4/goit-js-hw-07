@@ -16,13 +16,13 @@ const galleryItemEl = galleryItems
   )
   .join("");
 galleryEL.innerHTML = galleryItemEl;
-window.addEventListener("click", onGalleryItemClick);
-function onGalleryItemClick(e) {
-  e.preventDefault();
+// window.addEventListener("click", onGalleryItemClick);
+// function onGalleryItemClick(e) {
+  // e.preventDefault();
   const options = {
     captionsData: "alt",
     captionDelay: 250,
   };
   const lightbox = new SimpleLightbox(".gallery a", options);
-  window.removeEventListener("click", onGalleryItemClick);
-}
+  // window.removeEventListener("click", onGalleryItemClick);
+// }
