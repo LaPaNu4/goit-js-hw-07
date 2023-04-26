@@ -1,6 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 
-console.log(galleryItems);
+// console.log(galleryItems);
 const galleryEL = document.querySelector(".gallery");
 const galleryItemEl = galleryItems
   .map(
@@ -16,16 +16,13 @@ const galleryItemEl = galleryItems
   )
   .join("");
 galleryEL.innerHTML = galleryItemEl;
-galleryEL.addEventListener("click", onGalleryItemClick);
+window.addEventListener("click", onGalleryItemClick);
 function onGalleryItemClick(e) {
   e.preventDefault();
-  if (e.target.nodeName !== "IMG") {
-    return;
-  }
   const options = {
     captionsData: "alt",
     captionDelay: 250,
   };
   const lightbox = new SimpleLightbox(".gallery a", options);
-  galleryEL.removeEventListener("click", onGalleryItemClick);
+  window.removeEventListener("click", onGalleryItemClick);
 }

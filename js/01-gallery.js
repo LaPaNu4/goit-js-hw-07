@@ -23,19 +23,24 @@ function onGalleryItemClick(e) {
   }
   // const bigImageRef = e.target.dataset.source;
   // console.log(bigImageRef)
-  const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(
+    `
     <div class="modal">
         <img src="${e.target.dataset.source}" width="800" height="600">
 
     </div>
-`);
+`,
+    {
+      onShow: (instance) => window.addEventListener("keydown", closeModal),
+      onClose: (instance) => window.removeEventListener("keydown", closeModal),
+    }
+  );
   instance.show();
-  galleryEL.addEventListener("keydown", closeModal);
+  ;
 
   function closeModal(e) {
     if (e.code === "Escape") {
       instance.close();
-      galleryEL.removeEventListener("keydown", closeModal);
     }
   }
 }
